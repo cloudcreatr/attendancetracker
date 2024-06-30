@@ -2,3 +2,13 @@
   @tailwind components;
   @tailwind utilities;
   
+
+  .overflow-y-scroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+}

@@ -2,8 +2,8 @@ CREATE TABLE `attendance` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`date` integer NOT NULL,
 	`attendance` text NOT NULL,
-	`sub_id` integer,
-	`user_id` integer,
+	`sub_id` integer NOT NULL,
+	`user_id` integer NOT NULL,
 	FOREIGN KEY (`sub_id`) REFERENCES `subjects`(`id`) ON UPDATE no action ON DELETE cascade,
 	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE cascade
 );
@@ -11,7 +11,7 @@ CREATE TABLE `attendance` (
 CREATE TABLE `subjects` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`sub_name` text NOT NULL,
-	`user_id` integer,
+	`user_id` integer NOT NULL,
 	FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint

@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "8676acc2-8141-4875-b50e-c0aaab1de3ca",
+  "id": "ba8eb43f-0a2b-4069-90f9-96cd1569481a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "attendance": {
@@ -32,14 +32,14 @@
           "name": "sub_id",
           "type": "integer",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         },
         "user_id": {
           "name": "user_id",
           "type": "integer",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },
@@ -111,7 +111,7 @@
           "name": "user_id",
           "type": "integer",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },

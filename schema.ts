@@ -12,7 +12,7 @@ export const users = sqliteTable(
 export const subjects = sqliteTable("subjects", {
     id: integer("id").primaryKey(),
     sub_name: text("sub_name").notNull(),
-    user_id: integer("user_id").references(() => users.id, { onDelete: "cascade" })
+    user_id: integer("user_id").references(() => users.id, { onDelete: "cascade" }).notNull()
     
     
 }, (table) => { 
@@ -25,8 +25,8 @@ export const attendance = sqliteTable("attendance", {
     id: integer("id").primaryKey(),
     date: integer("date").notNull(),
     attendance: text("attendance", { enum: ["A", "B"]}).notNull(),
-    sub_id: integer("sub_id").references(() => subjects.id, { onDelete: "cascade" }),
-    user_id: integer("user_id").references(() => users.id, { onDelete: "cascade" })
+    sub_id: integer("sub_id").references(() => subjects.id, { onDelete: "cascade" }).notNull(),
+    user_id: integer("user_id").references(() => users.id, { onDelete: "cascade" }).notNull()
 }, (table) => { 
     return {
         subjects_id_index: index("subjects_id_index").on(table.sub_id),
